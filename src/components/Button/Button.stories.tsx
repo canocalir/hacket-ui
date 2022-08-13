@@ -5,16 +5,25 @@ import Button from "./Button";
 export default {
   title: "Components/Button",
   component: Button,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+    variant: {
+      options: ['primary', 'secondary'],
+      control: { type: 'radio' }
+    },
+  },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const HelloWorld = Template.bind({});
-HelloWorld.args = {
-  label: "Hello world!",
+export const Primary = Template.bind({});
+Primary.args = {
+  primary: true,
+  label: "Button",
 };
 
-export const ClickMe = Template.bind({});
-ClickMe.args = {
-  label: "Click me!",
-};
+export const Secondary = Template.bind({});
+Secondary.args = {
+  ...Primary.args,
+  primary: false,
+}
