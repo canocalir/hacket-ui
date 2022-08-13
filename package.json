@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/canocalir"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Hacket is a designer powered react components library for great apps",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
