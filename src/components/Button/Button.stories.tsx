@@ -6,24 +6,28 @@ export default {
   title: "Components/Button",
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    color: { control: 'color' },
     variant: {
       options: ['primary', 'secondary'],
       control: { type: 'radio' }
     },
+    label:{
+      options: ['Primary', 'Secondary'],
+      mapping: {
+        Primary: "Primary",
+        Secondary: "Secondary",
+      },
+    },
   },
 } as ComponentMeta<typeof Button>;
 
+
+
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: "Button",
+export const Basic = Template.bind({});
+Basic.args = {
+  color: "primary",
+  variant: "primary",
+  label:  "Primary",
 };
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  ...Primary.args,
-  primary: false,
-}
